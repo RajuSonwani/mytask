@@ -91,21 +91,6 @@ router.get("/home",authenticateToken,async(req,res)=>{
 
         let allUsers = await Services.findAll(req.decode.id);
         const blogs = await blogServices.findAll();
-        // const following = await followingServices.findAll();
-        // if(following.length>1){
-        //     var myArray =[];
-        //     allUsers.forEach((userObj)=>{
-        //         following.forEach((myObj)=>{
-        //             if(myObj.user02!=userObj.id && myObj.user01!=data.id){
-        //                 if(!myArray.includes(userObj)){
-        //                     myArray.push(userObj)
-        //                 }
-                        
-        //             }
-        //         })
-        //     });
-        //     res.render("home",{data:{data:data,users:myArray,blogs:blogs}});
-        // }
         res.render("home",{data:{data:data,users:allUsers,blogs:blogs}});
     }catch(err){
         res.send(err);
