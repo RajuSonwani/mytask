@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LogIn Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand">Social<b>App</b></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link">Home</a>
+                <!-- <a href="#" class="nav-item nav-link">About</a>
+                <div class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Web Design</a>
+                        <a href="#" class="dropdown-item">Web Development</a>
+                        <a href="#" class="dropdown-item">Graphic Design</a>
+                        <a href="#" class="dropdown-item">Digital Marketing</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link active">Pricing</a>
+                <a href="#" class="nav-item nav-link">Blog</a>
+                <a href="#" class="nav-item nav-link">Contact</a> -->
+            </div>
+            <!-- <form class="navbar-form form-inline">
+                <div class="input-group search-box">
+                    <input type="text" id="search"  placeholder="Search here...">
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="material-icons">&#xE8B6;</i>
+                        </span>
+                    </div>
+                </div>
+            </form> -->
+            <div class="input-group search-box">
+                <div class="dropdown">
+                    <input type="text" placeholder="Search.." onclick="myFunction()" id="myInput" class="form-control"
+                        onkeyup="filterFunction()" autocomplete="Off">
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#about">About</a>
+                        <a href="#base">Base</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#custom">Custom</a>
+                        <a href="#support">Support</a>
+                        <a href="#tools">Tools</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-nav ml-auto action-buttons">
+                <div class="nav-item dropdown">
+                    <a href="/signup" class="btn btn-primary  mr-4">SignUp</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>User LogIn</h2>
+                    <p>Please enter your unique phone and password</p>
+                </div>
+                <form target="/login" method="POST">
+                    <div class="form-group">
+                        <input type="phone" class="form-control" name="mobile" placeholder="Phone Number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div style="background-color: rgb(54, 51, 51); height:2px;"></div>
+                <p>Don't Have Acoount</p>
+                <a href="/signup">SignUp Here!</a>
+            </div>
+            <p class="botto-text">@ RajuSonwani</p>
+        </div>
+    </div>
+
+    <!-- bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>

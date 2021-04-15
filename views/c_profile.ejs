@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+        <a href="#" class="navbar-brand"><i class="fa fa-cube"></i>Social<b>App</b></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+            <form class="navbar-form form-inline">
+                <div class="input-group search-box">
+                    <input type="text" placeholder="Search.." onclick="myFunction()" id="myInput" class="form-control"
+                        onkeyup="filterFunction()" autocomplete="Off">
+                    <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#about">About</a>
+                        <a href="#base">Base</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#custom">Custom</a>
+                        <a href="#support">Support</a>
+                        <a href="#tools">Tools</a>
+                    </div>
+                </div>
+                <!-- <div class="input-group search-box">
+                    <input type="text" id="search" class="form-control" placeholder="Search here...">
+                    <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                </div> -->
+            </form>
+            <div class="navbar-nav ml-auto">
+                <a href="/home" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+                <!-- <a href="#" class="nav-item nav-link"><i class="fa fa-gears"></i><span>Projects</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-users"></i><span>Team</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-pie-chart"></i><span>Reports</span></a> -->
+                <div class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link add"><span class="material-icons" >add_to_photos</span>AddPost</a>
+                    <div class="dropdown-menu">
+                        <form action="/createBlog" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="title" placeholder="title">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description"cols="30" rows="5" placeholder="description"></textarea>
+                            </div>
+                            <button type="submit"><span class="material-icons">send</span></button>
+                        </form>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-envelope"></i><span>Messages</span></a>
+                <a href="#" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
+                <div class="nav-item dropdown ">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">
+                        <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar"
+                            alt="Avatar"><%=data.udata.name %>  <b class="caret"></b></a>
+                    <div class="dropdown-menu">
+                        <a href="/profile/<%=data.udata.id %>" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                        <div class="divider dropdown-divider"></div>
+                        <a href="/logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mainContent">
+        <div class="row py-5 px-4">
+            <div class="col-md-10 mx-auto">
+                <!-- Profile widget -->
+                <div class="bg-white shadow rounded overflow-hidden">
+                    <div class="px-4 pt-0 pb-4 cover">
+                        <div class="media align-items-end profile-head">
+                            <div class="profile mr-3 mb-4"> <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-FTr8wwpK2fQ9E1h9uhr0avZSmuVKGAnb6X5Dmal-_Nhvw-kJ&usqp=CAU"
+                                    alt="..." width="130" class="rounded mb-2 img-thumbnail"> </div>
+                            <div class="media-body mb-5 text-white">
+                                <h4 class="mt-0 mb-0"> <%=data.user.name %> </h4>
+                                <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i>role</p>
+                                <a href="#"><button class="followBtn">follow</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light p-4 d-flex justify-content-center text-center mt-3">
+                        <ul class="list-inline mb-0">
+
+                            <li class="list-inline-item">
+                                <h5 class="font-weight-bold mb-0 d-block"><%=data.count.count %></h5><small class="text-muted"> <i
+                                        class="fas fa-image mr-1"></i>Connections</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="px-4 py-3">
+                        <h5 class="mb-0">About</h5>
+                        <div class="p-4 rounded shadow-sm bg-light">
+                            <p class="font-italic mb-0">Lives in New York</p>
+                            <p class="font-italic mb-0">amelly22@gmail.com</p>
+                            <p class="font-italic mb-0"></p>
+                        </div>
+                    </div> -->
+                    <!-- <div class="py-4 px-4">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="mb-0">Recently posted stories</h5><a href="#"
+                                class="btn btn-link text-muted">Show all</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 mb-2 pr-lg-1"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-FkxOr2Z90pFBwNEgdhhA5QwIGSpGWLh9kJLAWbTFa0FOVWpa&usqp=CAU">
+                            </div>
+                            <div class="col-lg-6 mb-2 pl-lg-1"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDd60CzndjMVx6LfuVsDnAnC9BHSoKqqV4xH-XB0jIBG8ePSsq&usqp=CAU">
+                            </div>
+                            <div class="col-lg-6 pr-lg-1 mb-2"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRy5C1_VC45XNxhXGu8igiBA3cOOrk2CkEeKJ1ToKvXGmEIGEDq&usqp=CAU">
+                            </div>
+                            <div class="col-lg-6 pl-lg-1"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUlKWTo7VaIXWieL_XpW-mxEbjrO1CH22SD-t8mPq6rYaF9wur&usqp=CAU">
+                            </div>
+                        </div>
+                        <div class="profile mt-5"> <button class="profile_button px-2">Unsubscribe Brands</button>
+                            <button class="profile_button px-2">Collect Rewards</button> <button
+                                class="profile_button px-2">Back To Homepage</button> </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="../js/home.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
